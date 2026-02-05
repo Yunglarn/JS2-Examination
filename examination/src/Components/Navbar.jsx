@@ -3,12 +3,12 @@ import { NavLink } from "react-router-dom";
 
 function Navbar() {
   return (
-    // nav, because yay semantisk html
-    <nav>
-      <NavLink to="/">Start</NavLink> |{" "}
-      <NavLink to="/games">Sök i Spelkatalogen</NavLink> |{" "}
-      <NavLink to="/about">Om oss</NavLink> |{" "}
-      <NavLink to="/contact">Kontakt</NavLink>
+    // nav, because yay semantisk html och SEO
+    <nav> 
+      <NavLink to="/" className="Navbutton">Start</NavLink> {" "}
+      <NavLink to="/games" className="Navbutton">Sök i Spelkatalogen</NavLink> {" "}
+      <NavLink to="/about" className="Navbutton">Om oss</NavLink> {" "}
+      <NavLink to="/contact" className="Navbutton">Kontakt</NavLink>
     </nav>
     // |{" "} gör bara ett lodrätt streck följt av ett mellanslag innan nästa länk.
   );
