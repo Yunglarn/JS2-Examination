@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 
 
-
 function Games() {
 
 const [games, setGames] = useState([]);
@@ -9,15 +8,16 @@ const [games, setGames] = useState([]);
 const [searchWord, setSearchWord] = useState("");
 const [searchInput, setSearchInput] = useState("");
 const [loadingPage, setLoadingPage] = useState(true);
+const [error, setError] = useState(null);
 
 
 //Cors deny från hemsida när request görs från react, kringgår med corsproxy.io
 
 useEffect(() => {
-  fetch("https://corsproxy.io/?https://www.freetogame.com/api/games")
+  fetch("https://corsproxy.io/?https://www.freetogame.com/api/garmes")
     .then((res) => res.json())
     .then((data) => {
-       // console.log(JSON.stringify(data, null, 2));
+       // console.loga(JSON.stringify(dta, null, 2));
       setTimeout(() =>{
       setGames(data);
       setLoadingPage(false);
@@ -26,6 +26,7 @@ useEffect(() => {
     })
     .catch((err) => {
       console.error(err);
+      setError("Kunde inte hämta data, försök igen");
       setLoadingPage(false);
     });
 }, []);
@@ -33,7 +34,8 @@ useEffect(() => {
 
 // skapar filterGames array att spara matchande resultat för titlarna i games arrayen.
 // Filter loopar igenom likt en for loop (let i = 0; i < games.length; i++)
-//  och finner match. Under funktionens körstid kallar js alla titlar för game.
+// Under funktionens körstid kallar js alla objekt i arrayen för game.
+// returnera resultat om sökord inkluderar något i spelets titel
 
 const filterGames = games.filter((game) =>
   game.title.includes(searchWord)
@@ -58,8 +60,9 @@ const handleSearch = () => {
     <button onClick= {handleSearch}className="Searchbutton">Sök nu</button>
 
     {loadingPage && <p>Loading...</p>}
+    {error && <p>{error}</p>}
 
-    {!loadingPage && (
+    {!loadingPage && !error && (
       <ul>
       {filterGames.map((game) => (
         <li key={game.id}>

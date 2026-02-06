@@ -1,16 +1,19 @@
-# React + Vite
+1. Projekt Examination JavaScript 2 - Vite + React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Spelkatalogen är en app där du kan söka upp gratis spel för en överblick om vad det är för spel, en thumbnail, genre, utgivare samt utgivningsår.
+Datan är hämtat från ett API som allegedly uppdateras relativt frekvent.
 
-Currently, two official plugins are available:
+2. Hämta projektet. Se till att du har Node installerat.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Öppna vs code, använd cd i terminal och ändra directory till där du hämtat hem projektet.
+Skriv sedan in "npm run dev" och öppna localhost länken som skall dyka upp.
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+3.  * Jag använder mig utav routes med hjälp av React router.
+    * Försökt vara så strukturerad som möjligt med mina komponenter och 
+    har använt props som visas i UI från API't.
+    * UseEffect har använts vid datahämtning från API med en 
+    fetch() .then .then .catch
+    * Jag tycker arrow funktioner är lite förvirrande ibland, men långsamt går det bättre.
+    Fetch fungerade ej först pga CORS problem då hemsidan nekade när req
+    kom från react. corsproxy.io löste det.
+    Med flera länkar i både nav och footer så klarade app.jsx ej av att nesta in dem separat, skärmen blev helt blank. Jag kom i underfund med outlet och använde mig utav det för att lägga upp en önskad struktur.
