@@ -14,7 +14,7 @@ const [error, setError] = useState(null);
 //Cors deny från hemsida när request görs från react, kringgår med corsproxy.io
 
 useEffect(() => {
-  fetch("https://corsproxy.io/?https://www.freetogame.com/api/garmes")
+  fetch("https://corsproxy.io/?https://www.freetogame.com/api/games")
     .then((res) => res.json())
     .then((data) => {
        // console.loga(JSON.stringify(dta, null, 2));
