@@ -8,10 +8,10 @@
   flex-direction: column;
 }
 
-/* nav{
-  background-color: #353535;
-  color: rgb(0, 0, 0); */
-  
+#header-logo {  margin-left: 0%;
+}
+
+
 .Navbutton{
   background: rgb(105, 105, 105);
   color: rgb(5, 5, 5);

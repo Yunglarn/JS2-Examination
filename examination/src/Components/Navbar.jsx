@@ -1,9 +1,11 @@
 //Återanvändbar navbar, använder mig utav Navlink för tydliga klickbara länkar.
 import { NavLink } from "react-router-dom";
 
+
 function Navbar() {
   return (
     // nav, because yay semantisk html och SEO
+    
     <nav> 
       <NavLink to="/" className="Navbutton">Start</NavLink> {" "}
       <NavLink to="/games" className="Navbutton">Sök i Spelkatalogen</NavLink> {" "}

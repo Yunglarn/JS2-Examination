@@ -4,14 +4,17 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import LogoPicture from "./Headerlogo";
 
-function Structure() {
+function Structure({ logo }) {  // tar emot logo via props och placerar accordingly.
   return (
     <>
+      <LogoPicture image={logo} />
       <Navbar />
-      <Outlet />
+      <Outlet /> 
       <Footer />
     </>
   );
 }
+
 export default Structure;
